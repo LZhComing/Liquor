@@ -1,0 +1,14 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.liquorcloud.liquor.common.core.config.JacksonConfig,\
+  com.liquorcloud.liquor.common.core.config.RedisTemplateConfig,\
+  com.liquorcloud.liquor.common.core.config.RestTemplateConfig,\
+  com.liquorcloud.liquor.common.core.config.FilterIgnorePropertiesConfig,\
+  com.liquorcloud.liquor.common.core.exception.GlobalExceptionHandler,\
+  com.liquorcloud.liquor.common.core.util.SpringContextHolder,\
+  com.liquorcloud.liquor.common.core.mybatis.WebMvcConfig,\
+  com.liquorcloud.liquor.common.core.feign.fallback.RemoteUserServiceFallbackImpl,\
+  com.liquorcloud.liquor.common.core.feign.fallback.RemoteLogServiceFallbackImpl,\
+  com.liquorcloud.liquor.common.core.feign.fallback.RemoteTokenServiceFallbackImpl,\
+  com.liquorcloud.liquor.common.core.feign.factory.RemoteUserServiceFallbackFactory,\
+  com.liquorcloud.liquor.common.core.feign.factory.RemoteLogServiceFallbackFactory,\
+  com.liquorcloud.liquor.common.core.feign.factory.RemoteTokenServiceFallbackFactory

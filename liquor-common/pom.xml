@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.liquorCloud</groupId>
+        <artifactId>liquor</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>liquor-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>liquor 公共聚合模块</description>
+
+    <modules>
+        <module>liquor-common-core</module>
+        <module>liquor-common-log</module>
+        <module>liquor-common-security</module>
+        <module>liquor-common-model</module>
+    </modules>
+
+
+</project>

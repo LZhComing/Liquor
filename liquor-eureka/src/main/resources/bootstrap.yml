@@ -1,0 +1,36 @@
+#bootstarp.yml文件会在application.yml文件之前执行
+server:
+  port: 8761
+
+spring:
+  security:
+    user:
+      name: liquor
+      password: liquor
+  application:
+    name: liquor-eureka
+  cloud:
+    config:
+      enabled: false
+
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  server:
+    eviction-interval-timer-in-ms: 4000
+    enable-self-preservation: false
+    renewal-percent-threshold: 0.9
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
