@@ -20,6 +20,12 @@
             <artifactId>liquor-common-core</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!--model模块-->
+        <dependency>
+            <groupId>com.liquorCloud</groupId>
+            <artifactId>liquor-common-model</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!--安全模块-->
         <dependency>
             <groupId>com.liquorCloud</groupId>

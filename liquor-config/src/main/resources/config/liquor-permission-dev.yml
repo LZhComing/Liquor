@@ -4,7 +4,6 @@ security:
       client-id: ENC(imENTO7M8bLO38LFSIxnzw==)
       client-secret: ENC(i3cDFhs26sa2Ucrfz2hnQw==)
       scope: server
-
 # 数据源
 spring:
   datasource:
@@ -13,8 +12,7 @@ spring:
     username: root
     password: 132456
     url: jdbc:mysql://localhost:3306/liquor?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
-  main:
-    allow-bean-definition-overriding: true
+
 # 直接放行URL
 ignore:
   urls:

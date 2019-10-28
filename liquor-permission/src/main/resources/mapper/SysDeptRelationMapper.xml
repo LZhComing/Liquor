@@ -4,7 +4,7 @@
 <mapper namespace="com.liquorcloud.liquor.admin.mapper.SysDeptRelationMapper">
 
 	<!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="SysDeptRelation">
+	<resultMap id="BaseResultMap" type="com.liquorcloud.liquor.common.model.entity.SysDeptRelation">
 		<id column="ancestor" property="ancestor"/>
 		<result column="descendant" property="descendant"/>
 	</resultMap>
