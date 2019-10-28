@@ -14,7 +14,7 @@ spring:
             - ValidateCodeGatewayFilter
             # 前端密码解密
             - PasswordDecoderFilter
-        #UPMS 模块
+        #权限 模块
         - id: liquor-permission
           uri: lb://liquor-permission
           predicates:

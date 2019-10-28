@@ -21,12 +21,6 @@
 			<artifactId>liquor-common-core</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-		<!--UPMS接口模块-->
-		<dependency>
-			<groupId>com.liquorCloud</groupId>
-			<artifactId>liquor-upms-api</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 		<!--安全依赖获取上下文信息-->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -40,7 +34,6 @@
             <groupId>com.liquorCloud</groupId>
             <artifactId>liquor-common-model</artifactId>
             <version>1.0.0</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

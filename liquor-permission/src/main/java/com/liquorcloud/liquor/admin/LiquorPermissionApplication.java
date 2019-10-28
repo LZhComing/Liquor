@@ -14,9 +14,9 @@ import org.springframework.cloud.client.SpringCloudApplication;
 @EnableLiquorResourceServer
 @EnableLiquorFeignClients
 @SpringCloudApplication
-public class LiquorAdminApplication {
+public class LiquorPermissionApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(LiquorAdminApplication.class, args);
+		SpringApplication.run(LiquorPermissionApplication.class, args);
 	}
 
 }

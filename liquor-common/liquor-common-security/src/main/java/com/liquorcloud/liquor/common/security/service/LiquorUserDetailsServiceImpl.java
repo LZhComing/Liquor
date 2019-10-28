@@ -2,12 +2,12 @@ package com.liquorcloud.liquor.common.security.service;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
-import com.liquorcloud.liquor.admin.api.dto.UserInfo;
-import com.liquorcloud.liquor.admin.api.entity.SysUser;
-import com.liquorcloud.liquor.admin.api.feign.RemoteUserService;
 import com.liquorcloud.liquor.common.core.constant.CommonConstants;
 import com.liquorcloud.liquor.common.core.constant.SecurityConstants;
+import com.liquorcloud.liquor.common.core.feign.RemoteUserService;
 import com.liquorcloud.liquor.common.core.util.R;
+import com.liquorcloud.liquor.common.model.dto.UserInfo;
+import com.liquorcloud.liquor.common.model.entity.SysUser;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +28,7 @@ import java.util.Set;
 /**
  * 用户详细信息
  *
- * @author lengleng
+ * @author zzc
  */
 @Slf4j
 @Service

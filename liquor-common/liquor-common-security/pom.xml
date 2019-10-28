@@ -31,11 +31,5 @@
 			<groupId>org.springframework.security.oauth.boot</groupId>
 			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.liquorCloud</groupId>
-			<artifactId>liquor-upms-api</artifactId>
-			<version>1.0.0</version>
-			<scope>compile</scope>
-		</dependency>
 	</dependencies>
 </project>

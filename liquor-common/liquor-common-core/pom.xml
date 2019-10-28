@@ -37,7 +37,7 @@
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-extension</artifactId>
 			<version>${mybatis-plus.version}</version>
-			<scope>compile</scope>
+			<optional>true</optional>
 		</dependency>
 		<!--feign 依赖-->
 		<dependency>

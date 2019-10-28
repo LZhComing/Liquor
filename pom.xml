@@ -30,21 +30,6 @@
         <zipkin-storage-mysql.version>2.8.4</zipkin-storage-mysql.version>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>prod</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <eureka.defaultZone>http://localhost:8761/eureka/</eureka.defaultZone>
-                <redis.host>localhost:6379</redis.host>
-                <!--<zipkin.host>http://localhost:5761</zipkin.host>-->
-                <eureka.clientDefaultZone>http://liquor:liquor@localhost:8761/eureka/</eureka.clientDefaultZone>
-            </properties>
-        </profile>
-    </profiles>
-
     <dependencies>
         <!--eureka 客户端-->
         <dependency>
