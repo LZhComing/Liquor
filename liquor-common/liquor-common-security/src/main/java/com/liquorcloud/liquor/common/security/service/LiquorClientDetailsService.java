@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.provider.client.JdbcClientDetailsServ
 import javax.sql.DataSource;
 
 /**
- * 资源服务器客户端
+ * 获取客户端配置信息
  * @author zzc
  * @date 2019/10/23
  * see JdbcClientDetailsService

@@ -8,8 +8,8 @@ import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
 /**
- * @author lengleng
- * @date 2019/03/08
+ * @author zzc
+ * @date 2019/10/23
  */
 @Slf4j
 public class LiquorSecurityBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {

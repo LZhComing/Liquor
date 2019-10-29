@@ -37,7 +37,9 @@ import java.util.Map;
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 	private final DataSource dataSource;
+	//使用默认userDetailsService
 	private final UserDetailsService userDetailsService;
+	//密码模式需要的认证管理器
 	private final AuthenticationManager authenticationManager;
 	private final RedisConnectionFactory redisConnectionFactory;
 
@@ -76,7 +78,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
 		endpoints
 			.allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)
-			//.tokenStore(tokenStore())
+			.tokenStore(tokenStore())
 				//配置token增强，放入更多信息
 			.tokenEnhancer(tokenEnhancer())
 			.userDetailsService(userDetailsService)
@@ -94,6 +96,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Bean
 	public TokenStore tokenStore() {
 		RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
+		//设置前缀
 		tokenStore.setPrefix(SecurityConstants.PROJECT_PREFIX + SecurityConstants.OAUTH_PREFIX);
 		return tokenStore;
 	}

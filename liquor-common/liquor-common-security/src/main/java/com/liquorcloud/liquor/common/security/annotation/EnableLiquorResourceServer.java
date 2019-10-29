@@ -20,6 +20,7 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+//引入资源服务器自动配置、根据注解动态注入bean的相关属性
 @Import({LiquorResourceServerAutoConfiguration.class, LiquorSecurityBeanDefinitionRegistrar.class})
 public @interface EnableLiquorResourceServer {
 

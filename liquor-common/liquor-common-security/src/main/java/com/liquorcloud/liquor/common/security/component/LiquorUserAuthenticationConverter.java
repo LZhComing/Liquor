@@ -15,8 +15,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author lengleng
- * @date 2019-03-07
+ * 用户token转换
+ * @author zzc
+ * @date 2019-10-23
  * <p>
  * 根据checktoken 的结果转化用户信息
  */
@@ -24,10 +25,10 @@ public class LiquorUserAuthenticationConverter implements UserAuthenticationConv
 	private static final String N_A = "N/A";
 
 	/**
-	 * Extract information about the user to be used in an access token (i.e. for resource servers).
+	 * 提取要在访问令牌中使用的用户的信息
 	 *
-	 * @param authentication an authentication representing a user
-	 * @return a map of key values representing the unique information about the user
+	 * @param authentication 代表用户的身份验证
+	 * @return 表示用户的唯一信息的键值映射
 	 */
 	@Override
 	public Map<String, ?> convertUserAuthentication(Authentication authentication) {
@@ -40,10 +41,10 @@ public class LiquorUserAuthenticationConverter implements UserAuthenticationConv
 	}
 
 	/**
-	 * Inverse of {@link #convertUserAuthentication(Authentication)}. Extracts an Authentication from a map.
+	 * 从映射中提取身份验证。
 	 *
-	 * @param map a map of user information
-	 * @return an Authentication representing the user or null if there is none
+	 * @param map 用户信息map
+	 * @return 表示用户的身份验证，如果没有，则为null
 	 */
 	@Override
 	public Authentication extractAuthentication(Map<String, ?> map) {
@@ -69,6 +70,6 @@ public class LiquorUserAuthenticationConverter implements UserAuthenticationConv
 			return AuthorityUtils.commaSeparatedStringToAuthorityList(StringUtils
 				.collectionToCommaDelimitedString((Collection<?>) authorities));
 		}
-		throw new IllegalArgumentException("Authorities must be either a String or a Collection");
+		throw new IllegalArgumentException("权限必须是字符串或集合!");
 	}
 }

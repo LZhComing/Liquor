@@ -8,3 +8,9 @@ spring:
     url: jdbc:mysql://localhost:3306/liquor?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
   main:
     allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

@@ -1,9 +1,9 @@
 package com.liquorcloud.liquor.common.security.component;
 
 import cn.hutool.http.HttpStatus;
-import com.baomidou.mybatisplus.extension.api.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.liquorcloud.liquor.common.core.constant.CommonConstants;
+import com.liquorcloud.liquor.common.core.util.R;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

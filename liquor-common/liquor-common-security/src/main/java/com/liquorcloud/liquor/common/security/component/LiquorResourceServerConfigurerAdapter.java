@@ -15,8 +15,9 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * @author lengleng
- * @date 2019/03/08
+ * 资源服务器配置适配器
+ * @author zzc
+ * @date 2019/10/23
  *
  * <p>
  * 1. 支持remoteTokenServices 负载均衡

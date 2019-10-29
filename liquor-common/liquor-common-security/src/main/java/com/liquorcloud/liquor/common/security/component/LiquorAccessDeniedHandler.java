@@ -1,10 +1,5 @@
 package com.liquorcloud.liquor.common.security.component;
 
-/**
- * @author lengleng
- * @date 2019/2/1
- */
-
 import cn.hutool.http.HttpStatus;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.liquorcloud.liquor.common.core.constant.CommonConstants;
@@ -22,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 /**
- * @author lengleng
+ * @author zzc
  * 授权拒绝处理器，覆盖默认的OAuth2AccessDeniedHandler
  * 包装失败信息到LiquorDeniedException
  */

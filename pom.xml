@@ -93,6 +93,7 @@
         <module>liquor-auth</module>
         <module>liquor-permission</module>
         <module>liquor-gateway</module>
+        <module>auth-Demo</module>
     </modules>
 
     <dependencyManagement>
