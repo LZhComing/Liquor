@@ -1,7 +1,18 @@
 server:
   port: 3000
 
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
 spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/liquor?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
   application:
     name: liquor-auth
   profiles:
@@ -10,8 +21,8 @@ spring:
   cloud:
     config:
       fail-fast: true
-      name: ${spring.application.name}
-      profile: ${spring.profiles.active}
+      name: liquor-auth
+      profile: dev
       discovery:
         enabled: true
         service-id: liquor-config

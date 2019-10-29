@@ -1,0 +1,25 @@
+server:
+  port: 3000
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+spring:
+  application:
+    name: liquor-auth
+  profiles:
+    active: dev
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://liquor:liquor@localhost:8761/eureka/
+
+security:
+  oauth2:
+    client:
+      registered-redirect-uri: http://example.com
