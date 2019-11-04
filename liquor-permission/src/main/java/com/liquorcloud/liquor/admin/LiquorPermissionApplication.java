@@ -7,11 +7,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 
 /**
- * @author lengleng
- * @date 2018年06月21日
+ * @author zzc
+ * @date 2019年11月4日
  * 用户统一管理系统
  */
-@EnableLiquorResourceServer
+//@EnableLiquorResourceServer
 @EnableLiquorFeignClients
 @SpringCloudApplication
 public class LiquorPermissionApplication {

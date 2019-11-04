@@ -1,0 +1,45 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: liquor-permission
+    # 数据源
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/liquor?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+
+  # 配置中心
+#  cloud:
+#    config:
+#      fail-fast: true
+#      name: ${spring.application.name}
+#      profile: ${spring.profiles.active}
+#      discovery:
+#        enabled: true
+#        service-id: liquor-config
+  profiles:
+    active: dev
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://liquor:liquor@localhost:8761/eureka/
+security:
+  oauth2:
+    client:
+      client-id: liquor-permission
+      client-secret: liquor-permission
+      access-token-uri: http://localhost:3000/oauth/token
+      user-authorization-uri: http://localhost:3000/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:3000/oauth/check_token
+
+mybatis-plus:
+  type-aliases-package: com.liquorcloud.liquor.common.model.entity
+  mapper-locations: classpath:mapper/*.xml

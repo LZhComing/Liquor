@@ -6,6 +6,7 @@ import com.liquorcloud.liquor.common.core.util.R;
 import com.liquorcloud.liquor.common.log.annotation.SysLog;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

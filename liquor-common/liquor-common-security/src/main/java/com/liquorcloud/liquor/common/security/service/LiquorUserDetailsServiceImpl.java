@@ -20,10 +20,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 用户详细信息
@@ -33,7 +30,7 @@ import java.util.Set;
 @Slf4j
 @Service
 @AllArgsConstructor
-public class LiquorUserDetailsServiceImpl implements UserDetailsService {
+public class LiquorUserDetailsServiceImpl implements UserDetailsService  {
 	private final RemoteUserService remoteUserService;
 	private final CacheManager cacheManager;
 
@@ -41,14 +38,14 @@ public class LiquorUserDetailsServiceImpl implements UserDetailsService {
 	 * 用户密码登录
 	 *
 	 * @param username 用户名
-	 * @return
+	 * @return UserDetails
 	 */
 	@Override
 	@SneakyThrows
 	public UserDetails loadUserByUsername(String username) {
 		Cache cache = cacheManager.getCache("user_details");
 		if (cache != null && cache.get(username) != null) {
-			return (LiquorUser) cache.get(username).get();
+			return (LiquorUser) Objects.requireNonNull(cache.get(username)).get();
 		}
 
 		R<UserInfo> result = remoteUserService.info(username, SecurityConstants.FROM_IN);
@@ -62,7 +59,7 @@ public class LiquorUserDetailsServiceImpl implements UserDetailsService {
 	 * 构建userdetails
 	 *
 	 * @param result 用户信息
-	 * @return
+	 * @return UserDetails
 	 */
 	private UserDetails getUserDetails(R<UserInfo> result) {
 		if (result == null || result.getData() == null) {
@@ -82,7 +79,7 @@ public class LiquorUserDetailsServiceImpl implements UserDetailsService {
 			= AuthorityUtils.createAuthorityList(dbAuthsSet.toArray(new String[0]));
 		SysUser user = info.getSysUser();
 
-		// 构造security用户
+		// 构造security用户，这里的密码指定了加密方式，Security5新功能
 		return new LiquorUser(user.getUserId(), user.getDeptId(), user.getUsername(), SecurityConstants.BCRYPT + user.getPassword(),
 			StrUtil.equals(user.getLockFlag(), CommonConstants.STATUS_NORMAL), true, true, true, authorities);
 	}
