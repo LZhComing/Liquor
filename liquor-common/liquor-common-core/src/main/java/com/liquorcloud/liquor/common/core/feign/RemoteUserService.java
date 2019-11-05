@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
  * @author lengleng
  * @date 2019/2/1
  */
-@FeignClient(contextId = "user", value = ServiceNameConstants.UMPS_SERVICE, fallbackFactory = RemoteUserServiceFallbackFactory.class)
+@FeignClient(name = ServiceNameConstants.UMPS_SERVICE, fallbackFactory = RemoteUserServiceFallbackFactory.class)
 public interface RemoteUserService {
 	/**
 	 * 通过用户名查询用户、角色信息

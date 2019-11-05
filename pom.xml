@@ -23,11 +23,17 @@
         <kaptcha.version>0.0.9</kaptcha.version>
         <velocity.version>1.7</velocity.version>
         <jasypt.version>2.1.0</jasypt.version>
+        <swagger.version>2.9.2</swagger.version>
         <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
         <!--zipkin2.12.x需要此版本jooq-->
         <jooq.version>3.11.11</jooq.version>
         <zipkin.version>2.12.2</zipkin.version>
         <zipkin-storage-mysql.version>2.8.4</zipkin-storage-mysql.version>
+        <!--统一管理程序配置属性-->
+        <eureka.defaultZoneClient>http://liquor:liquor@localhost:8761/eureka/</eureka.defaultZoneClient>
+        <access.token.uri>http://localhost:3000/oauth/token</access.token.uri>
+        <user.authorization.uri>http://localhost:3000/oauth/authorize</user.authorization.uri>
+        <token.info.uri>http://localhost:3000/oauth/check_token</token.info.uri>
     </properties>
 
     <dependencies>
@@ -77,6 +83,29 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <!--开发工具，热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!--swagger文档-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <!-- 引入swagger-bootstrap-ui包 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.2</version>
         </dependency>
         <!--测试依赖-->
         <dependency>
@@ -131,18 +160,18 @@
 
     <build>
         <finalName>${project.name}</finalName>
+        <!--配置资源过滤，使得maven属性在资源文件（src/main/resources）中也能使用-->
         <resources>
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
                 <includes>
-                    <include>**/*.*</include>
+                    <include>application*</include>
+                    <include>bootstrap*</include>
                 </includes>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
             </resource>
         </resources>
         <pluginManagement>

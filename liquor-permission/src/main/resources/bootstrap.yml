@@ -1,0 +1,34 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: liquor-permission
+# 配置中心
+#  cloud:
+#    config:
+#      fail-fast: true
+#      name: ${spring.application.name}
+#      profile: ${spring.profiles.active}
+#      discovery:
+#        enabled: true
+#        service-id: liquor-config
+  profiles:
+    active: dev
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: ${eureka.defaultZoneClient}
+#授权中心配置
+security:
+  oauth2:
+    client:
+      client-id: liquor-permission
+      client-secret: liquor-permission
+      access-token-uri: ${access.token.uri}
+      user-authorization-uri: ${user.authorization.uri}
+    resource:
+      token-info-uri: ${token.info.uri}

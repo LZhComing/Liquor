@@ -6,9 +6,9 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author lengleng
- * @date 2019/2/1
- * <p>
+ * @author zzc
+ * @date 2019/10/23
+ * 用户信息传输对象
  * commit('SET_ROLES', data)
  * commit('SET_NAME', data)
  * commit('SET_AVATAR', data)

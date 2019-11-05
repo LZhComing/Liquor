@@ -1,0 +1,24 @@
+#bootstrap.yml是在系统引导启动阶段设置的属性，要比application.yml先前加载
+#服务器端口配置
+server:
+  port: 3000
+#spring相关配置
+spring:
+  application:
+    name: liquor-auth-server
+  profiles:
+    active: dev
+  # 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: ${eureka.defaultZoneClient}
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
