@@ -12,3 +12,9 @@ mybatis-plus:
   #全局配置，不显示banner
   global-config:
     banner: false
+# 直接放行URL
+ignore:
+  urls:
+    - /actuator/**
+    - /user/info/*
+    - /log/**

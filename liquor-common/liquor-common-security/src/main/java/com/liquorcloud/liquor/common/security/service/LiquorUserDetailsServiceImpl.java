@@ -43,15 +43,15 @@ public class LiquorUserDetailsServiceImpl implements UserDetailsService  {
 	@Override
 	@SneakyThrows
 	public UserDetails loadUserByUsername(String username) {
-		Cache cache = cacheManager.getCache("user_details");
+		/*Cache cache = cacheManager.getCache("user_details");
 		if (cache != null && cache.get(username) != null) {
 			return (LiquorUser) Objects.requireNonNull(cache.get(username)).get();
-		}
+		}*/
 
 		R<UserInfo> result = remoteUserService.info(username, SecurityConstants.FROM_IN);
 		UserDetails userDetails = getUserDetails(result);
-		assert cache != null;
-		cache.put(username, userDetails);
+		//assert cache != null;
+		//cache.put(username, userDetails);
 		return userDetails;
 	}
 

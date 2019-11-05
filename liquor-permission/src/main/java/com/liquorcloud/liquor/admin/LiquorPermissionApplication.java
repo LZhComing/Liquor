@@ -11,7 +11,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
  * @date 2019年11月4日
  * 用户统一管理系统
  */
-//@EnableLiquorResourceServer
+@EnableLiquorResourceServer
 @EnableLiquorFeignClients
 @SpringCloudApplication
 public class LiquorPermissionApplication {
