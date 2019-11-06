@@ -7,9 +7,9 @@ package com.liquorcloud.liquor.common.core.constant;
  */
 public interface ServiceNameConstants {
 	/**
-	 * 认证服务的SERVICEID
+	 * 认证服务
 	 */
-	String AUTH_SERVICE = "liquor-auth";
+	String AUTH_SERVICE = "liquor-auth-server";
 
 	/**
 	 * UMPS模块

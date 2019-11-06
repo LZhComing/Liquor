@@ -15,7 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 用户token转换
+ * 用户token转换,提取出用户token中设置的增强信息(用户名等)
  * @author zzc
  * @date 2019-10-23
  * <p>

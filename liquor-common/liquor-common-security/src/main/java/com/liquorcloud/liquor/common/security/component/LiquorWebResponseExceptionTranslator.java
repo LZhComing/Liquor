@@ -17,6 +17,7 @@ import org.springframework.security.oauth2.common.exceptions.InvalidGrantExcepti
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.provider.error.WebResponseExceptionTranslator;
 import org.springframework.security.web.util.ThrowableAnalyzer;
+import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 
 /**
@@ -25,6 +26,7 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
  * 异常处理,重写oauth 默认实现
  */
 @Slf4j
+@Component
 public class LiquorWebResponseExceptionTranslator implements WebResponseExceptionTranslator {
 
 	private ThrowableAnalyzer throwableAnalyzer = new DefaultThrowableAnalyzer();
