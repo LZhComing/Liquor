@@ -19,7 +19,7 @@ eureka:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://liquor:liquor@localhost:8761/eureka/
+      defaultZone: ${eureka.defaultZoneClient}
 
 # 暴露监控端点
 management:

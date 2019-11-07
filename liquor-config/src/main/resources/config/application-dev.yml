@@ -7,7 +7,7 @@ jasypt:
 spring:
   redis:
     password:
-    host: localhost
+    host: ${redis.host}
   # zipkin
 #  zipkin:
 #    enabled: true

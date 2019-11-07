@@ -34,7 +34,7 @@ public class LiquorResourceServerConfigurerAdapter extends ResourceServerConfigu
 	@Autowired
 	private AccessDeniedHandler liquorAccessDeniedHandler;
 	@Autowired
-	private RestTemplate RestTemplate;
+	private RestTemplate restTemplate;
 
 	/**
 	 * 默认的配置，对外暴露
@@ -65,7 +65,7 @@ public class LiquorResourceServerConfigurerAdapter extends ResourceServerConfigu
 		UserAuthenticationConverter userTokenConverter = new LiquorUserAuthenticationConverter();
 		accessTokenConverter.setUserTokenConverter(userTokenConverter);
 
-		remoteTokenServices.setRestTemplate(RestTemplate);
+		remoteTokenServices.setRestTemplate(restTemplate);
 		remoteTokenServices.setAccessTokenConverter(accessTokenConverter);
 		resources.authenticationEntryPoint(resourceAuthExceptionEntryPoint)
 			.accessDeniedHandler(liquorAccessDeniedHandler)
