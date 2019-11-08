@@ -20,7 +20,8 @@ spring:
           predicates:
             - Path=/admin/**
           filters:
-            # 限流配置
+            # 限流配置，使用令牌桶算法
+            #参考：https://www.cnblogs.com/forezp/p/10140316.html
             - name: RequestRateLimiter
               args:
                 key-resolver: '#{@remoteAddrKeyResolver}'

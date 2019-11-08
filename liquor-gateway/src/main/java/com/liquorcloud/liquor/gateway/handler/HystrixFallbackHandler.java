@@ -17,7 +17,7 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.G
 /**
  * @author zzc
  * @date 2019/10/28
- * Hystrix 降级处理
+ * Hystrix 降级处理，只是简单的输出不可用的服务日志
  */
 @Slf4j
 @Component

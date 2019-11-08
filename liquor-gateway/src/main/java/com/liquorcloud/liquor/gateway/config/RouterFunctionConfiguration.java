@@ -23,6 +23,9 @@ public class RouterFunctionConfiguration {
 	private final HystrixFallbackHandler hystrixFallbackHandler;
 	private final ImageCodeHandler imageCodeHandler;
 
+	/**
+	 * 降级入口。这里的意思类似于SpringMVC 定义一个 @GetMapping("/fallback") 接口
+	 */
 	@Bean
 	public RouterFunction routerFunction() {
 		return RouterFunctions.route(
