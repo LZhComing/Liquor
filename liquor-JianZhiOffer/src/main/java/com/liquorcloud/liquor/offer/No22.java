@@ -31,6 +31,7 @@ public class No22 {
             return result;
         }
 
+
         if(start==yEnd){
             //只有一行,从左向右打印即可
             for(int i=start;i<=xEnd;i++){
