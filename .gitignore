@@ -1,3 +1,5 @@
+#配置git  ignore
+#https://blog.csdn.net/u010566681/article/details/53183146
 # .gitignore for maven
 target/
 *.releaseBackup
@@ -131,3 +133,10 @@ Icon
 !wrapper/*.jar
 !**/wrapper/*.jar
 tmlog.lck
+liquor-JianZhiOffer/src/main/resources/
+liquor-JianZhiOffer/src/test/
+liquor-auth/src/test/
+liquor-common/liquor-common-model/src/main/resources/
+liquor-common/liquor-common-model/src/test/
+liquor-gateway/src/test/
+liquor-permission/src/test/
