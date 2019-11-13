@@ -1,69 +1,41 @@
 package com.liquorcloud.liquor.offer.no20to30;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 /**
- * 顺时针打印矩阵
+ * 定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。
+ *
+ * 这道题我一开始以为可以用一个成员变量存储min，后来发现问题
+ * 因为不知道pop出的是不是最小值，如果不是还好，如果pop出的是min，那么就需要更新这个成员变量，但是我们不知道栈中的哪个数据是倒数第二小的，故不可行
+ * 后来又想用一个辅助栈，在push时，作比较，如果push的值比辅助栈的值小就更新辅助栈的值，但是辅助栈只存储一个值的话，还是存在更新的问题，故也不可行
+ * 可行的方案是用辅助栈，保证辅助栈和数据栈有相同的元素，但是辅助栈的栈顶始终是最小的那个数，
  * @author zzc
  */
 public class No22 {
-    private static ArrayList<Integer> result = new ArrayList<>();
+    private Stack<Integer> data = new Stack<>();
+    private Stack<Integer> min  = new Stack<>();
 
-    public static void main(String[] args) {
-        int[][] a= {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+    public void push(int node) {
+        data.push(node);
+        if(min.isEmpty() || min.peek()>node){
+            min.push(node);
+        }else{
+            //始终保持栈顶元素是那个最小值
+            min.push(min.peek());
+        }
 
-        System.out.println(printMatrix(a));
     }
 
-    private static ArrayList<Integer> printMatrix(int[][] matrix) {
-            if(matrix.length <= 0){return null;}
-            return printMatrixRecu(matrix,0);
+    public void pop() {
+        data.pop();
+        min.pop();
     }
 
-    private static ArrayList<Integer> printMatrixRecu(int[][] matrix,int start){
-
-        int row = matrix.length;//行数
-        int col = matrix[0].length;//列数
-        int xEnd = col-start-1;//x方向最后一个
-        int yEnd = row-start-1;//y方向最后一个
-
-        if(xEnd<start || yEnd<start){
-            return result;
-        }
-
-        if(start==yEnd){
-            //只有一行,从左向右打印即可
-            for(int i=start;i<=xEnd;i++){
-                result.add(matrix[start][i]);
-            }
-            return result;
-        }
-        if(start==xEnd){
-            //只有一列，从上向下打印
-            for (int i = start;i<=yEnd;i++){
-                result.add(matrix[i][start]);
-            }
-            return result;
-        }
-        //打印上面横着的那一行，包括最后一个
-        for(int i=start;i<=xEnd;i++){
-            result.add(matrix[start][i]);
-        }
-        //打印右面竖着的一列，不包括第一个，包括最后一个
-        for (int i = start+1;i<=yEnd;i++){
-            result.add(matrix[i][xEnd]);
-        }
-        //打印下面横着的一行，不包括第一个，包括最后一个
-        for (int i=xEnd-1;i>=start;i--){
-            result.add(matrix[yEnd][i]);
-        }
-        //打印左边竖着的一列，不包括第一个，不包括最后一个
-        for (int i = yEnd-1;i>start;i--){
-            result.add(matrix[i][start]);
-        }
-
-        //递归的进去下一层
-        return printMatrixRecu(matrix,start+1);
+    public int top() {
+        return data.peek();
     }
 
+    public int min() {
+        return min.peek();
+    }
 }
