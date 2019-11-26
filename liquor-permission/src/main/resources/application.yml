@@ -1,4 +1,7 @@
 spring:
+  redis:
+    password:
+    host: ${redis.host}
     # 数据源
   datasource:
     type: com.zaxxer.hikari.HikariDataSource

@@ -1,0 +1,45 @@
+spring:
+  cloud:
+    gateway:
+      locator:
+        enabled: true
+      routes:
+        # 认证中心
+        - id: liquor-auth-server
+          uri: lb://liquor-auth-server
+          predicates:
+            - Path=/auth/**
+          filters:
+            # 验证码处理
+            #- ValidateCodeGatewayFilter
+            # 前端密码解密
+            #- PasswordDecoderFilter
+        #权限 模块
+        - id: liquor-permission
+          uri: lb://liquor-permission
+          predicates:
+            - Path=/admin/**
+          filters:
+            # 限流配置，使用令牌桶算法
+            #参考：https://www.cnblogs.com/forezp/p/10140316.html
+            - name: RequestRateLimiter
+              args:
+                key-resolver: '#{@remoteAddrKeyResolver}'
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+              # 降级配置
+            - name: Hystrix
+              args:
+                name: default
+                fallbackUri: 'forward:/fallback'
+
+
+security:
+  encode:
+    # 前端密码密钥，必须16位
+    key: 'thanks,pig4cloud'
+
+# 不校验验证码终端
+ignore:
+  clients:
+    - test

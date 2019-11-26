@@ -15,7 +15,9 @@ package com.liquorcloud.liquor.offer.no20to30;
  * 第二种方法是：在第一遍遍历时，使用一个hash表，存储每个节点的random指针指向的节点，这样用O(n)的空间复杂度，换得O(n)的时间复杂度
  *
  *
- * 第一步：先当做简单链表进行复制，遍历链表，
+ * 第一步：先当做简单链表进行复制，遍历链表，注意是在原来的每个节点后面复制一个节点
+ * 第二步：从头结点开始，赋值节点的随即指针肯定是原节点的随即指针指向的节点的下一节点
+ *
  *
  *
  * @author zzc
@@ -24,16 +26,19 @@ public class No27 {
     public RandomListNode Clone(RandomListNode pHead) {
         if (pHead==null){return null;}
 
-        RandomListNode cloneNode = new RandomListNode(pHead.label);
         RandomListNode pNode = pHead;
         while (pNode!=null){
-            cloneNode.next = new RandomListNode(pNode.next.label);
-            pNode = pNode.next;
-            cloneNode = cloneNode.next;
+
+            RandomListNode cpNode = new RandomListNode(pNode.label);
+            //新建一个节点并放在原链表头结点的后面
+            cpNode.next = pNode.next;
+            pNode.next = cpNode;
+
+            pNode = cpNode.next;
         }
 
         while (pNode!=null){
-            
+
         }
 
         return null;
