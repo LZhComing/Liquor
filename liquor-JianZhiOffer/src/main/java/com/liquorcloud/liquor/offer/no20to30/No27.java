@@ -17,7 +17,7 @@ package com.liquorcloud.liquor.offer.no20to30;
  *
  * 第一步：先当做简单链表进行复制，遍历链表，注意是在原来的每个节点后面复制一个节点
  * 第二步：从头结点开始，赋值节点的随即指针肯定是原节点的随即指针指向的节点的下一节点
- *
+ * 第三步： 拆分链表，根据奇偶位置，偶数位置的肯定是要返回的复制之后的链表节点
  *
  *
  * @author zzc
@@ -37,11 +37,29 @@ public class No27 {
             pNode = cpNode.next;
         }
 
+        pNode = pHead;
         while (pNode!=null){
-
+            //必须考虑随机指针为空的情况
+            if(pNode.random!=null){
+                pNode.next.random = pNode.random.next;
+            }
+            pNode = pNode.next.next;
         }
 
-        return null;
+
+        pNode = pHead;
+        RandomListNode cloneHead = pHead.next;
+        while (pNode!=null){
+            RandomListNode cloneNode = pNode.next;
+            pNode.next = cloneNode.next;
+            cloneNode.next = cloneNode.next==null?null:cloneNode.next.next;
+            pNode = pNode.next;
+
+
+            //cloneNode.next = cloneNode.next.next;
+            //pNode3 = pNode3.next.next;
+        }
+        return cloneHead;
     }
 
 
