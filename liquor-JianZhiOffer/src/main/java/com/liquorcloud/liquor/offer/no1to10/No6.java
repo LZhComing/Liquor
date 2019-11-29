@@ -1,4 +1,4 @@
-package com.liquorcloud.liquor.offer.no0to10;
+package com.liquorcloud.liquor.offer.no1to10;
 
 /**
  * 剑指offer第6题
