@@ -16,39 +16,48 @@ package com.liquorcloud.liquor.offer.no20to30;
 public class No28 {
 
 
-    public TreeNode convert(TreeNode head) {
-        if(head==null) {
-            return head;
+    public TreeNode Convert(TreeNode pRootOfTree) {
+        if (pRootOfTree==null){
+            return null;
         }
-        TreeNode lastNodeInList=null;
-        lastNodeInList=convertHelper(head,lastNodeInList);
-        TreeNode firstNodeInList=lastNodeInList;
-        while(firstNodeInList.left!=null) {
-            firstNodeInList=firstNodeInList.left;
+        TreeNode lastNodeInList;
+        lastNodeInList = convertHelp(pRootOfTree, null);
+        while (lastNodeInList.left!=null){
+            lastNodeInList = lastNodeInList.left;
         }
-        return firstNodeInList;
+       return lastNodeInList;
     }
 
     /**
-     * 将以node为根结点的树转化为排序链表，链表头部与lastNode链接，并返回最后一个结点
+     * 递归修改链表的指针，利用中序遍历的递归实现，
+     * @param head 递归处理中的当前节点
+     * @param lastNode 已经排序好的链表中的最后一个节点
+     * @return 排序后链表的最后一个节点
      */
-    private TreeNode convertHelper(TreeNode node,TreeNode lastNode) {
-        //处理左子树，获得最大结点
-        if(node.left!=null) {
-            lastNode=convertHelper(node.left, lastNode);
+    private TreeNode convertHelp(TreeNode head, TreeNode lastNode) {
+        //先处理左子树
+        if (head.left!=null){
+            lastNode = convertHelp(head.left,lastNode);
         }
-        //链接最大结点和根结点
-        node.left=lastNode;
-        if(lastNode!=null) {
-            lastNode.right=node;
+        //修改左子树最大的节点和当前节点的指针
+        head.left = lastNode;
+
+        if (lastNode!=null){//需要确保左子树不为空时，采取操作左子树的最大节点，避免空指针异常
+            lastNode.right = head;
         }
-        //处理右子树
-        lastNode=node;
-        if(node.right!=null) {
-            lastNode=convertHelper(node.right, lastNode);
+
+        //把当前节点设置为最后一个节点
+        lastNode = head;
+        //再处理右子树
+        if (head.right!=null){
+            lastNode = convertHelp(head.right,lastNode);
         }
+
         return lastNode;
     }
+
+
+
     static class TreeNode {
         int val = 0;
         TreeNode left = null;
