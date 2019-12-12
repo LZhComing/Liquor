@@ -20,7 +20,7 @@ public class LiquorResourceServerAutoConfiguration {
 	@Bean
 	@Primary
 	@LoadBalanced
-	public RestTemplate lbRestTemplate() {
+	public RestTemplate RestTemplate() {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.setErrorHandler(new DefaultResponseErrorHandler() {
 			@Override
