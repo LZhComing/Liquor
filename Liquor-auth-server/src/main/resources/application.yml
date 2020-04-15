@@ -1,7 +1,10 @@
 logging:
   level:
-    org.springframework: DEBUG
+    org.springframework: debug
 spring:
+  redis:
+    password: ${redis.pwd}
+    host: ${redis.host}
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${mysql.host}:3306/liquor?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&autoReconnect=true&serverTimezone=UTC

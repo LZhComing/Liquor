@@ -53,9 +53,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(ClientDetailsServiceConfigurer clients) {
 		LiquorClientDetailsService clientDetailsService = new LiquorClientDetailsService(dataSource);
 		//设置查询客户端信息的sql
-		clientDetailsService.setSelectClientDetailsSql(SecurityConstants.DEFAULT_SELECT_STATEMENT);
+		//clientDetailsService.setSelectClientDetailsSql(SecurityConstants.DEFAULT_SELECT_STATEMENT);
 		//设置默认的查询sql
-		clientDetailsService.setFindClientDetailsSql(SecurityConstants.DEFAULT_FIND_STATEMENT);
+		//clientDetailsService.setFindClientDetailsSql(SecurityConstants.DEFAULT_FIND_STATEMENT);
 		clients.withClientDetails(clientDetailsService);
 	}
 

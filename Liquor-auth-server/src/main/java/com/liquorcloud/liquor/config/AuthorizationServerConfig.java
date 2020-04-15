@@ -4,13 +4,11 @@ import com.liquorcloud.liquor.common.core.constant.SecurityConstants;
 import com.liquorcloud.liquor.common.security.component.LiquorWebResponseExceptionTranslator;
 import com.liquorcloud.liquor.common.security.service.LiquorUser;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.web.configurers.oauth2.client.OAuth2LoginConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -19,10 +17,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
-import org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint;
 import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
@@ -38,17 +35,23 @@ import java.util.Map;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     private final UserDetailsService userDetailsService;
     private final DataSource dataSource;
-    private final LiquorWebResponseExceptionTranslator liquorWebResponseExceptionTranslator;
+    /***密码模式需要认证管理器*/
+    private final AuthenticationManager authenticationManager;
+    private final RedisConnectionFactory redisConnectionFactory;
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
         endpoints
-                .tokenStore(jdbcTokenStore())
+                .tokenStore(redisTokenStore())
+                //这里会被适配成clientUserDetailsService
                 .userDetailsService(userDetailsService)
+                .authenticationManager(authenticationManager)
+                //是否重复刷新token
+                .reuseRefreshTokens(false)
                 //token增强
                 .tokenEnhancer(tokenEnhancer())
                 //异常信息转换
-                .exceptionTranslator(liquorWebResponseExceptionTranslator);
+                .exceptionTranslator(new LiquorWebResponseExceptionTranslator());
     }
 
     @Override
@@ -56,10 +59,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         clients.withClientDetails(clientDetails());
     }
 
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
-        security
-                .checkTokenAccess("isAuthenticated()");
+        security.allowFormAuthenticationForClients()
+                .checkTokenAccess("permitAll()");
     }
 
     /**
@@ -71,11 +75,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     }
 
     /**
-     * mysql存储token
+     * redis存储token,系统重启之后用户不用重新登录
      */
     @Bean
-    public TokenStore jdbcTokenStore() {
-        return new JdbcTokenStore(dataSource);
+    public TokenStore redisTokenStore() {
+        RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
+        //设置前缀
+        tokenStore.setPrefix(SecurityConstants.PROJECT_PREFIX + SecurityConstants.OAUTH_PREFIX);
+        return tokenStore;
     }
 
     /**

@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * @author zzc
  * @date 2019/10/28
- * 密码解密工具类
+ * 密码解密工具类，用来解密前端密码
  */
 @Slf4j
 @Component
