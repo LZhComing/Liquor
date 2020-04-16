@@ -2,6 +2,7 @@ package com.liquorcloud.liquor.config;
 
 import com.liquorcloud.liquor.common.core.constant.SecurityConstants;
 import com.liquorcloud.liquor.common.security.component.LiquorWebResponseExceptionTranslator;
+import com.liquorcloud.liquor.common.security.service.LiquorClientDetailsService;
 import com.liquorcloud.liquor.common.security.service.LiquorUser;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -71,7 +72,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      */
     @Bean
     public ClientDetailsService clientDetails() {
-        return new JdbcClientDetailsService(dataSource);
+        return new LiquorClientDetailsService(dataSource);
     }
 
     /**

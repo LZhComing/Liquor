@@ -1,7 +1,7 @@
 #bootstrap.yml是在系统引导启动阶段设置的属性，要比application.yml先前加载
 #服务器端口配置
 server:
-  port: 3000
+  port: 8002
 #spring相关配置
 spring:
   application:

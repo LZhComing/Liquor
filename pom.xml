@@ -35,9 +35,9 @@
         <redis.host>117.51.147.193</redis.host>
         <redis.pwd>1qaz!QAZ</redis.pwd>
         <eureka.defaultZoneClient>http://liquor:liquor@117.51.147.193:8761/eureka/</eureka.defaultZoneClient>
-        <access.token.uri>http://liquor-auth-server/oauth/token</access.token.uri>
-        <user.authorization.uri>http://liquor-auth-server/oauth/authorize</user.authorization.uri>
-        <token.info.uri>http://liquor-auth-server/oauth/check_token</token.info.uri>
+        <access.token.uri>http://localhost:8002/oauth/token</access.token.uri>
+        <user.authorization.uri>http://localhost:8002/oauth/authorize</user.authorization.uri>
+        <token.info.uri>http://localhost:8002/oauth/check_token</token.info.uri>
     </properties>
 
     <dependencies>
@@ -89,11 +89,11 @@
             <scope>provided</scope>
         </dependency>
         <!--开发工具，热部署-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
         <!--swagger文档-->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -123,7 +123,6 @@
         <module>liquor-eureka</module>
         <module>liquor-config</module>
         <module>liquor-common</module>
-        <module>liquor-auth</module>
         <module>liquor-permission</module>
         <module>liquor-gateway</module>
         <module>Liquor-auth-server</module>

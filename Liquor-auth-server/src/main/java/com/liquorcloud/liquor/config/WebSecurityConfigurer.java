@@ -31,8 +31,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     private final LiquorUserDetailsServiceImpl userDetailsService;
     /**
      * 密码加密方式，spring 5 后必须对密码进行加密
-     *
-     * @return BCryptPasswordEncoder
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -59,12 +57,6 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
             .and().csrf().disable();
     }
 
-    /**
-     * 认证管理
-     *
-     * @return 认证管理对象
-     * @throws Exception 认证异常信息
-     */
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {

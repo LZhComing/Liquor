@@ -12,9 +12,10 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
 import java.util.Collection;
 
 /**
- * @author lengleng
- * @date 2019/2/1
- * 扩展OAuth2FeignRequestInterceptor
+ * @author zzc
+ * @date 2020/4/15
+ * 扩展OAuth2FeignRequestInterceptor,实现服务之间的feign调用时token验证逻辑。
+ *
  */
 @Slf4j
 public class LiquorFeignClientInterceptor extends OAuth2FeignRequestInterceptor {
@@ -41,8 +42,7 @@ public class LiquorFeignClientInterceptor extends OAuth2FeignRequestInterceptor 
 	 * Create a template with the header of provided name and extracted extract
 	 * 1. 如果使用 非web 请求，header 区别
 	 * 2. 根据authentication 还原请求token
-	 *
-	 * @param template
+	 * 本服务的token 通过copyToken的形式传递给下游服务
 	 */
 	@Override
 	public void apply(RequestTemplate template) {

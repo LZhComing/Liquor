@@ -1,10 +1,10 @@
 server:
-  port: 9999
+  port: 8001
 
 spring:
   redis:
-    password:
     host: ${redis.host}
+    password: ${redis.pwd}
   application:
     name: liquor-gateway
   # 配置中心

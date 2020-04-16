@@ -1,6 +1,18 @@
+logging:
+  level:
+    org.springframework: info
 spring:
   cloud:
     gateway:
+      #网关配置跨域
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowCredentials: true
+            exposedHeaders: "Content-Disposition,Content-Type,Cache-Control"
+            allowedHeaders: "*"
+            allowedOrigins: "*"
+            allowedMethods: "*"
       locator:
         enabled: true
       routes:
@@ -11,9 +23,9 @@ spring:
             - Path=/auth/**
           filters:
             # 验证码处理
-            #- ValidateCodeGatewayFilter
+            - ValidateCodeGatewayFilter
             # 前端密码解密
-            #- PasswordDecoderFilter
+            - PasswordDecoderFilter
         #权限 模块
         - id: liquor-permission
           uri: lb://liquor-permission

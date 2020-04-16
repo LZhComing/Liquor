@@ -1,18 +1,17 @@
 package com.liquorcloud.liquor.common.security.util;
 
 import cn.hutool.core.codec.Base64;
-import cn.hutool.core.util.CharsetUtil;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
+ * @date 2020/4/15
  * 认证授权相关工具类
  */
 @Slf4j
@@ -28,7 +27,7 @@ public class AuthUtils {
 	@SneakyThrows
 	public String[] extractAndDecodeHeader(String header) {
 
-		byte[] base64Token = header.substring(6).getBytes("UTF-8");
+		byte[] base64Token = header.substring(6).getBytes(StandardCharsets.UTF_8);
 		byte[] decoded;
 		try {
 			decoded = Base64.decode(base64Token);
@@ -37,7 +36,7 @@ public class AuthUtils {
 				"Failed to decode basic authentication token");
 		}
 
-		String token = new String(decoded, CharsetUtil.UTF_8);
+		String token = new String(decoded, StandardCharsets.UTF_8);
 
 		int delim = token.indexOf(":");
 
@@ -48,10 +47,7 @@ public class AuthUtils {
 	}
 
 	/**
-	 * *从header 请求中的clientId/clientsecect
-	 *
-	 * @param request
-	 * @return
+	 * 从header 请求中的clientId/clientsecect
 	 */
 	@SneakyThrows
 	public String[] extractAndDecodeHeader(HttpServletRequest request) {

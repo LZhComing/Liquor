@@ -1,6 +1,6 @@
 logging:
   level:
-    org.springframework: debug
+    org.springframework: info
 spring:
   redis:
     password: ${redis.pwd}

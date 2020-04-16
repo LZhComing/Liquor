@@ -1,4 +1,4 @@
-package com.liquorcloud.liquor.auth.endpoint;
+package com.liquorcloud.liquor.endpoint;
 
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.StrUtil;
