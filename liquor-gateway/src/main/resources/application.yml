@@ -44,7 +44,19 @@ spring:
               args:
                 name: default
                 fallbackUri: 'forward:/fallback'
-
+# hystrix 配置
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制,为true,则超时作为熔断根据
+          enabled: true
+        isolation:
+          strategy: SEMAPHORE
+          thread:
+            timeoutInMilliseconds: 60000
+  shareSecurityContext: true
 
 security:
   encode:
