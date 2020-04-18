@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author zzc
- * @date 2019/2/1
  */
 @Configuration
 @MapperScan("com.liquorcloud.liquor.admin.mapper")

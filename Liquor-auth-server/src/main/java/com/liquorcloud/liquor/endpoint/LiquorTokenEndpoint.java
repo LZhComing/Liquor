@@ -30,8 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * 删除token端点
  */
 @RestController

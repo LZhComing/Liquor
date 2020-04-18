@@ -5,12 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.liquorcloud.liquor.common.model.entity.SysRoleMenu;
 
 /**
- * <p>
- * 角色菜单表 Mapper 接口
- * </p>
- *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenu> {
 

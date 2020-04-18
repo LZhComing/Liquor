@@ -14,8 +14,7 @@ import java.time.LocalDateTime;
  * 日志表
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Data
 public class SysLog implements Serializable {

@@ -21,8 +21,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * 异常处理,重写oauth 默认实现
  */
 @Slf4j

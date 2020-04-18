@@ -12,8 +12,7 @@ import org.springframework.util.StringUtils;
 import java.util.Collection;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * 接口权限判断工具
  */
 @Slf4j

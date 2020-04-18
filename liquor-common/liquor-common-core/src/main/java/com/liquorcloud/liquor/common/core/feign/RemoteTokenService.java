@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  */
 @FeignClient(contextId = "token", value = ServiceNameConstants.AUTH_SERVICE, fallbackFactory = RemoteTokenServiceFallbackFactory.class)
 public interface RemoteTokenService {

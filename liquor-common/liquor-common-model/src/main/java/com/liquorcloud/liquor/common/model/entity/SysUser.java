@@ -30,8 +30,7 @@ import java.time.LocalDateTime;
  * 用户表
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Data
 public class SysUser implements Serializable {

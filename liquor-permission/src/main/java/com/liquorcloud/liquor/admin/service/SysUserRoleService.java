@@ -9,8 +9,7 @@ import com.liquorcloud.liquor.common.model.entity.SysUserRole;
  * 用户角色表 服务类
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 public interface SysUserRoleService extends IService<SysUserRole> {
 

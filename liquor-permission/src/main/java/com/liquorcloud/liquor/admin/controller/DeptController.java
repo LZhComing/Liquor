@@ -13,12 +13,7 @@ import javax.validation.Valid;
 import java.time.LocalDateTime;
 
 /**
- * <p>
- * 部门管理 前端控制器
- * </p>
- *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @RestController
 @AllArgsConstructor

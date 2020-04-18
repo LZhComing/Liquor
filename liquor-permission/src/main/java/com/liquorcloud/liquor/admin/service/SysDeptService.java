@@ -11,8 +11,7 @@ import java.util.List;
  * 部门管理 服务类
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 public interface SysDeptService extends IService<SysDept> {
 

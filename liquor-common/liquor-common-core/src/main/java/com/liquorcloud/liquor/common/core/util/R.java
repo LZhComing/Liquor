@@ -11,7 +11,7 @@ import java.io.Serializable;
  * 响应信息主体
  *
  * @param <T>
- * @author lengleng
+ * @author zzc
  */
 @ToString
 @NoArgsConstructor

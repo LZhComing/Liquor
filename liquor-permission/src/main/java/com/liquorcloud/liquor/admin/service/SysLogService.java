@@ -9,8 +9,7 @@ import com.liquorcloud.liquor.common.model.entity.SysLog;
  * 日志表 服务类
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 public interface SysLogService extends IService<SysLog> {
 

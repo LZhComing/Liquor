@@ -3,8 +3,7 @@ package com.liquorcloud.liquor.common.core.exception;
 import lombok.NoArgsConstructor;
 
 /**
- * @author lengleng
- * @date 2018年06月22日16:22:03
+ * @author zzc
  * 403 授权拒绝
  */
 @NoArgsConstructor

@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 /**
- * @author lengleng
- * @date 2018/9/4
+ * @author zzc
  * getTokenPage 管理
  */
 @RestController

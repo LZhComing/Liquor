@@ -1,8 +1,7 @@
 package com.liquorcloud.liquor.common.core.constant;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  */
 public interface CommonConstants {
 	/**

@@ -25,8 +25,7 @@ import lombok.EqualsAndHashCode;
  * 用户角色表
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

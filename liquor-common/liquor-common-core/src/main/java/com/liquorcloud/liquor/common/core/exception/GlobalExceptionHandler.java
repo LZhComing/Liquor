@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.List;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * 全局的的异常处理器
  */
 @Slf4j

@@ -3,8 +3,7 @@ package com.liquorcloud.liquor.common.core.exception;
 import lombok.NoArgsConstructor;
 
 /**
- * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @author zzc
  */
 @NoArgsConstructor
 public class CheckedException extends RuntimeException {

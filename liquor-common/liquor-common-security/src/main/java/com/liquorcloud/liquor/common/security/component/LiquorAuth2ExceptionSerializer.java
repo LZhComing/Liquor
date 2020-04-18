@@ -8,8 +8,7 @@ import com.liquorcloud.liquor.common.security.exception.LiquorAuth2Exception;
 import lombok.SneakyThrows;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * <p>
  * OAuth2 异常格式化
  */

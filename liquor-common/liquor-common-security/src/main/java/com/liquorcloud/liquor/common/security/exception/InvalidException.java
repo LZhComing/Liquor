@@ -4,8 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.liquorcloud.liquor.common.security.component.LiquorAuth2ExceptionSerializer;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  */
 @JsonSerialize(using = LiquorAuth2ExceptionSerializer.class)
 public class InvalidException extends LiquorAuth2Exception {

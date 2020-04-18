@@ -16,8 +16,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author lengleng
- * @date 2019/02/14
+ * @author zzc
  * <p>
  * 服务间接口不鉴权处理逻辑
  */

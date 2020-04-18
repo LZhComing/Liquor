@@ -12,8 +12,7 @@ import com.liquorcloud.liquor.common.core.util.R;
 import java.util.List;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  */
 public interface SysUserService extends IService<SysUser> {
 	/**

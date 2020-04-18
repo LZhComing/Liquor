@@ -28,8 +28,7 @@ import lombok.EqualsAndHashCode;
  * 角色与部门对应关系
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

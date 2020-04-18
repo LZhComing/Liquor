@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * feign token  fallback
  */
 @Slf4j

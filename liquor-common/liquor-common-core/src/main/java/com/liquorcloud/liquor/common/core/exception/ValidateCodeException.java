@@ -1,8 +1,8 @@
 package com.liquorcloud.liquor.common.core.exception;
 
 /**
- * @author lengleng
- * @date 2018年06月22日16:22:15
+ * 验证码异常
+ * @author zzc
  */
 public class ValidateCodeException extends Exception {
 	private static final long serialVersionUID = -7285211528095468156L;

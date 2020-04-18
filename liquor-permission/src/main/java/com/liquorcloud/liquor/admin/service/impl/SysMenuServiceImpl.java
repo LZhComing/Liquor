@@ -23,8 +23,7 @@ import java.util.List;
  * 菜单权限表 服务实现类
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Service
 @AllArgsConstructor

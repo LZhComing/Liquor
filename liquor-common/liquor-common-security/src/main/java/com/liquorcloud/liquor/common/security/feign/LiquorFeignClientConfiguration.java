@@ -10,8 +10,7 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * feign 拦截器传递 header 中oauth token，
  * 使用hystrix 的信号量模式
  */

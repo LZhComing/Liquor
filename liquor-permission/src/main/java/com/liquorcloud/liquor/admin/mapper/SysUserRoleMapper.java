@@ -10,8 +10,7 @@ import feign.Param;
  * 用户角色表 Mapper 接口
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
 	/**

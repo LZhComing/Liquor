@@ -25,8 +25,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  * 手机号登录成功，返回oauth token
  */
 @Slf4j

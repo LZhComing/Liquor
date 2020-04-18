@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
  * 日志表 服务实现类
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Service
 public class SysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements SysLogService {

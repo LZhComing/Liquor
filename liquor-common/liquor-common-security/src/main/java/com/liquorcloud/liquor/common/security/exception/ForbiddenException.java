@@ -5,8 +5,7 @@ import com.liquorcloud.liquor.common.security.component.LiquorAuth2ExceptionSeri
 import org.springframework.http.HttpStatus;
 
 /**
- * @author lengleng
- * @date 2019/2/1
+ * @author zzc
  */
 @JsonSerialize(using = LiquorAuth2ExceptionSerializer.class)
 public class ForbiddenException extends LiquorAuth2Exception {

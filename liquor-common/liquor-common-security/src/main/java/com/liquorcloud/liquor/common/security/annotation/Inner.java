@@ -3,8 +3,7 @@ package com.liquorcloud.liquor.common.security.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author lengleng
- * @date 2018/11/26
+ * @author zzc
  * <p>
  * 服务调用不鉴权注解
  */

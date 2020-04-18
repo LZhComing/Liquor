@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
  * 用户角色表 服务实现类
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Service
 public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {

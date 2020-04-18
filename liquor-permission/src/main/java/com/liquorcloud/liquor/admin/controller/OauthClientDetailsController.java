@@ -13,12 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 /**
- * <p>
- * 前端控制器
- * </p>
- *
- * @author lengleng
- * @since 2018-05-15
+ * @author zzc
  */
 @RestController
 @AllArgsConstructor

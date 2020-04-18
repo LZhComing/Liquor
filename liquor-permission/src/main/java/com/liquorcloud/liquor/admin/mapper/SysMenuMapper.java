@@ -8,12 +8,7 @@ import com.liquorcloud.liquor.common.model.vo.MenuVO;
 import java.util.List;
 
 /**
- * <p>
- * 菜单权限表 Mapper 接口
- * </p>
- *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
 

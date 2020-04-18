@@ -15,8 +15,7 @@ import java.time.LocalDateTime;
  * 字典表
  * </p>
  *
- * @author lengleng
- * @since 2019/2/1
+ * @author zzc
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
