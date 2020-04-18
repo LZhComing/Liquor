@@ -30,14 +30,14 @@
         <zipkin.version>2.12.2</zipkin.version>
         <zipkin-storage-mysql.version>2.8.4</zipkin-storage-mysql.version>
         <!--统一管理程序配置属性-->
-        <mysql.host>117.51.147.193</mysql.host>
-        <mysql.pwd>123456</mysql.pwd>
+        <mysql.host>139.9.119.146</mysql.host>
+        <mysql.pwd>1qaz!QAZ</mysql.pwd>
         <redis.host>117.51.147.193</redis.host>
         <redis.pwd>1qaz!QAZ</redis.pwd>
         <eureka.defaultZoneClient>http://liquor:liquor@117.51.147.193:8761/eureka/</eureka.defaultZoneClient>
-        <access.token.uri>http://localhost:8002/oauth/token</access.token.uri>
-        <user.authorization.uri>http://localhost:8002/oauth/authorize</user.authorization.uri>
-        <token.info.uri>http://localhost:8002/oauth/check_token</token.info.uri>
+        <access.token.uri>http://liquor-auth-server/oauth/token</access.token.uri>
+        <user.authorization.uri>http://liquor-auth-server/oauth/authorize</user.authorization.uri>
+        <token.info.uri>http://liquor-auth-server/oauth/check_token</token.info.uri>
     </properties>
 
     <dependencies>

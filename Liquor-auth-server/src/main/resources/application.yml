@@ -5,8 +5,18 @@ spring:
   redis:
     password: ${redis.pwd}
     host: ${redis.host}
+    timeout: 60s
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${mysql.host}:3306/liquor?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&autoReconnect=true&serverTimezone=UTC
     username: root
-    password: 123456
+    password: ${mysql.pwd}
+    hikari:
+      read-only: false
+      connection-timeout: 60000
+      idle-timeout: 60000
+      validation-timeout: 3000
+      max-lifetime: 60000
+      login-timeout: 5
+      maximum-pool-size: 60
+      minimum-idle: 10

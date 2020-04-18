@@ -5,6 +5,7 @@ spring:
   redis:
     host: ${redis.host}
     password: ${redis.pwd}
+    timeout: 60s
   application:
     name: liquor-gateway
   # 配置中心
