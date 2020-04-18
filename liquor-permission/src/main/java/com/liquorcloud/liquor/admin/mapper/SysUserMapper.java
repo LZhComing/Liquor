@@ -31,10 +31,9 @@ public interface SysUserMapper extends BaseMapper<SysUser> {
 	 * 分页查询用户信息（含角色）
 	 *
 	 * @param page    分页
-	 * @param userDTO 查询参数
 	 * @return list
 	 */
-	IPage<List<UserVO>> getUserVosPage(Page page, @Param("query") UserDTO userDTO);
+	IPage<List<UserVO>> getUserVosPage(Page page);
 
 	/**
 	 * 通过ID查询用户信息

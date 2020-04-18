@@ -105,12 +105,11 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
 	 * 分页查询用户信息（含有角色信息）
 	 *
 	 * @param page    分页对象
-	 * @param userDTO 参数列表
 	 * @return
 	 */
 	@Override
-	public IPage getUserWithRolePage(Page page, UserDTO userDTO) {
-		return baseMapper.getUserVosPage(page, userDTO);
+	public IPage getUserWithRolePage(Page page) {
+		return baseMapper.getUserVosPage(page);
 	}
 
 	/**

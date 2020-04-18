@@ -125,12 +125,11 @@ public class UserController {
 	 * 分页查询用户
 	 *
 	 * @param page    参数集
-	 * @param userDTO 查询参数列表
 	 * @return 用户集合
 	 */
 	@GetMapping("/page")
-	public R getUserPage(Page page, UserDTO userDTO) {
-		return R.ok(userService.getUserWithRolePage(page, userDTO));
+	public R getUserPage(Page page) {
+		return R.ok(userService.getUserWithRolePage(page));
 	}
 
 	/**

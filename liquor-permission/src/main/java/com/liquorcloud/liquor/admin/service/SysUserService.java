@@ -27,10 +27,9 @@ public interface SysUserService extends IService<SysUser> {
 	 * 分页查询用户信息（含有角色信息）
 	 *
 	 * @param page    分页对象
-	 * @param userDTO 参数列表
 	 * @return
 	 */
-	IPage getUserWithRolePage(Page page, UserDTO userDTO);
+	IPage getUserWithRolePage(Page page);
 
 	/**
 	 * 删除用户
