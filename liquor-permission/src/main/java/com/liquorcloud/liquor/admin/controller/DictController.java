@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.liquorcloud.liquor.common.model.entity.SysDict;
 import com.liquorcloud.liquor.admin.service.SysDictService;
 import com.liquorcloud.liquor.common.core.util.R;
-import com.liquorcloud.liquor.common.log.annotation.SysLog;
+import com.liquorcloud.liquor.common.core.log.annotation.SysLog;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

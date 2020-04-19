@@ -3,15 +3,6 @@ server:
 spring:
   application:
     name: liquor-permission
-# 配置中心
-#  cloud:
-#    config:
-#      fail-fast: true
-#      name: ${spring.application.name}
-#      profile: ${spring.profiles.active}
-#      discovery:
-#        enabled: true
-#        service-id: liquor-config
   profiles:
     active: dev
 # 注册中心配置

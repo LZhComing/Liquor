@@ -1,4 +1,4 @@
-package com.liquorcloud.liquor.common.log.annotation;
+package com.liquorcloud.liquor.common.core.log.annotation;
 
 import java.lang.annotation.*;
 

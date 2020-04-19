@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.liquorcloud.liquor.common.log.LogAutoConfiguration
-org.springframework.context.ApplicationContextInitializer=\
-    com.liquorcloud.liquor.common.log.init.ApplicationLoggerInitializer

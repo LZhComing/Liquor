@@ -1,8 +1,8 @@
-package com.liquorcloud.liquor.common.log;
+package com.liquorcloud.liquor.common.core.log;
 
 import com.liquorcloud.liquor.common.core.feign.RemoteLogService;
-import com.liquorcloud.liquor.common.log.aspect.SysLogAspect;
-import com.liquorcloud.liquor.common.log.event.SysLogListener;
+import com.liquorcloud.liquor.common.core.log.aspect.SysLogAspect;
+import com.liquorcloud.liquor.common.core.log.event.SysLogListener;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;

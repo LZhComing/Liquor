@@ -6,7 +6,7 @@ import com.liquorcloud.liquor.common.model.entity.SysRole;
 import com.liquorcloud.liquor.admin.service.SysRoleMenuService;
 import com.liquorcloud.liquor.admin.service.SysRoleService;
 import com.liquorcloud.liquor.common.core.util.R;
-import com.liquorcloud.liquor.common.log.annotation.SysLog;
+import com.liquorcloud.liquor.common.core.log.annotation.SysLog;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

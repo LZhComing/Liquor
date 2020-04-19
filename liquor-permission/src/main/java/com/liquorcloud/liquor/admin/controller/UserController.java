@@ -7,7 +7,7 @@ import com.liquorcloud.liquor.common.model.dto.UserDTO;
 import com.liquorcloud.liquor.common.model.entity.SysUser;
 import com.liquorcloud.liquor.admin.service.SysUserService;
 import com.liquorcloud.liquor.common.core.util.R;
-import com.liquorcloud.liquor.common.log.annotation.SysLog;
+import com.liquorcloud.liquor.common.core.log.annotation.SysLog;
 import com.liquorcloud.liquor.common.security.annotation.Inner;
 import com.liquorcloud.liquor.common.security.util.SecurityUtils;
 import lombok.AllArgsConstructor;

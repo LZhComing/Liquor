@@ -11,4 +11,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.liquorcloud.liquor.common.core.feign.fallback.RemoteTokenServiceFallbackImpl,\
   com.liquorcloud.liquor.common.core.feign.factory.RemoteUserServiceFallbackFactory,\
   com.liquorcloud.liquor.common.core.feign.factory.RemoteLogServiceFallbackFactory,\
-  com.liquorcloud.liquor.common.core.feign.factory.RemoteTokenServiceFallbackFactory
+  com.liquorcloud.liquor.common.core.feign.factory.RemoteTokenServiceFallbackFactory,\
+  com.liquorcloud.liquor.common.core.log.LogAutoConfiguration
+org.springframework.context.ApplicationContextInitializer=\
+  com.liquorcloud.liquor.common.core.log.init.ApplicationLoggerInitializer

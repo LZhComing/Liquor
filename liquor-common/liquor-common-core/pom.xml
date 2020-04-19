@@ -79,5 +79,16 @@
             <artifactId>liquor-common-model</artifactId>
             <version>1.0.0</version>
         </dependency>
+		<!--这两个安全依赖只是为了记录日志时使用，不往下传递-->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<optional>true</optional>
+		</dependency>
     </dependencies>
 </project>

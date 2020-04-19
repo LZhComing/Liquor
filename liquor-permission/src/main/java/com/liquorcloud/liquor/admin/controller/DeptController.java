@@ -3,10 +3,9 @@ package com.liquorcloud.liquor.admin.controller;
 import com.liquorcloud.liquor.common.model.entity.SysDept;
 import com.liquorcloud.liquor.admin.service.SysDeptService;
 import com.liquorcloud.liquor.common.core.util.R;
-import com.liquorcloud.liquor.common.log.annotation.SysLog;
+import com.liquorcloud.liquor.common.core.log.annotation.SysLog;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

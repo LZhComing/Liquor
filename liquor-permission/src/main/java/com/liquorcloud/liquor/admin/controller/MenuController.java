@@ -8,7 +8,7 @@ import com.liquorcloud.liquor.common.model.vo.TreeUtil;
 import com.liquorcloud.liquor.admin.service.SysMenuService;
 import com.liquorcloud.liquor.common.core.constant.CommonConstants;
 import com.liquorcloud.liquor.common.core.util.R;
-import com.liquorcloud.liquor.common.log.annotation.SysLog;
+import com.liquorcloud.liquor.common.core.log.annotation.SysLog;
 import com.liquorcloud.liquor.common.security.util.SecurityUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;

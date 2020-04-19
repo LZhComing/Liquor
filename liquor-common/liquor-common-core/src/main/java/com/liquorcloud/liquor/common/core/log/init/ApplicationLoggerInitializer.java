@@ -1,4 +1,4 @@
-package com.liquorcloud.liquor.common.log.init;
+package com.liquorcloud.liquor.common.core.log.init;
 
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;

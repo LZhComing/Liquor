@@ -1,9 +1,9 @@
-package com.liquorcloud.liquor.common.log.aspect;
+package com.liquorcloud.liquor.common.core.log.aspect;
 
 import com.liquorcloud.liquor.common.core.util.SpringContextHolder;
-import com.liquorcloud.liquor.common.log.annotation.SysLog;
-import com.liquorcloud.liquor.common.log.event.SysLogEvent;
-import com.liquorcloud.liquor.common.log.util.SysLogUtils;
+import com.liquorcloud.liquor.common.core.log.annotation.SysLog;
+import com.liquorcloud.liquor.common.core.log.event.SysLogEvent;
+import com.liquorcloud.liquor.common.core.log.util.SysLogUtils;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

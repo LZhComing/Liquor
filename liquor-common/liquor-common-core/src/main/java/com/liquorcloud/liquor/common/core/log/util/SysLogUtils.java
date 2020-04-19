@@ -1,4 +1,4 @@
-package com.liquorcloud.liquor.common.log.util;
+package com.liquorcloud.liquor.common.core.log.util;
 
 import cn.hutool.core.util.URLUtil;
 import cn.hutool.extra.servlet.ServletUtil;

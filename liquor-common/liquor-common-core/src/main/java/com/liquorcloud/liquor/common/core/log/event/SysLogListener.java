@@ -1,4 +1,4 @@
-package com.liquorcloud.liquor.common.log.event;
+package com.liquorcloud.liquor.common.core.log.event;
 
 import com.liquorcloud.liquor.common.model.entity.SysLog;
 import com.liquorcloud.liquor.common.core.feign.RemoteLogService;
