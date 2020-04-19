@@ -5,7 +5,7 @@
 
 <mapper namespace="com.liquorcloud.liquor.admin.mapper.SysOauthClientDetailsMapper">
 
-	<resultMap id="sysOauthClientDetailsMap" type="com.liquorcloud.liquor.common.model.entity.SysOauthClientDetails">
+	<resultMap id="sysOauthClientDetailsMap" type="com.liquorcloud.liquor.common.model.entity.OauthClientDetails">
 		<id property="clientId" column="client_id"/>
 		<result property="resourceIds" column="resource_ids"/>
 		<result property="clientSecret" column="client_secret"/>

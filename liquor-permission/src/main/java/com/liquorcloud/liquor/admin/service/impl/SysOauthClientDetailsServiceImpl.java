@@ -1,7 +1,7 @@
 package com.liquorcloud.liquor.admin.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.liquorcloud.liquor.common.model.entity.SysOauthClientDetails;
+import com.liquorcloud.liquor.common.model.entity.OauthClientDetails;
 import com.liquorcloud.liquor.admin.mapper.SysOauthClientDetailsMapper;
 import com.liquorcloud.liquor.admin.service.SysOauthClientDetailsService;
 import com.liquorcloud.liquor.common.core.constant.SecurityConstants;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @author zzc
  */
 @Service
-public class SysOauthClientDetailsServiceImpl extends ServiceImpl<SysOauthClientDetailsMapper, SysOauthClientDetails> implements SysOauthClientDetailsService {
+public class SysOauthClientDetailsServiceImpl extends ServiceImpl<SysOauthClientDetailsMapper, OauthClientDetails> implements SysOauthClientDetailsService {
 
 	/**
 	 * 通过ID删除客户端
@@ -38,7 +38,7 @@ public class SysOauthClientDetailsServiceImpl extends ServiceImpl<SysOauthClient
 	 */
 	@Override
 	@CacheEvict(value = SecurityConstants.CLIENT_DETAILS_KEY, key = "#clientDetails.clientId")
-	public Boolean updateClientDetailsById(SysOauthClientDetails clientDetails) {
+	public Boolean updateClientDetailsById(OauthClientDetails clientDetails) {
 		return this.updateById(clientDetails);
 	}
 }

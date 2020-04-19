@@ -1,7 +1,7 @@
 package com.liquorcloud.liquor.admin.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.liquorcloud.liquor.common.model.entity.SysOauthClientDetails;
+import com.liquorcloud.liquor.common.model.entity.OauthClientDetails;
 
 /**
  * <p>
@@ -10,7 +10,7 @@ import com.liquorcloud.liquor.common.model.entity.SysOauthClientDetails;
  *
  * @author zzc
  */
-public interface SysOauthClientDetailsService extends IService<SysOauthClientDetails> {
+public interface SysOauthClientDetailsService extends IService<OauthClientDetails> {
 	/**
 	 * 通过ID删除客户端
 	 *
@@ -22,8 +22,8 @@ public interface SysOauthClientDetailsService extends IService<SysOauthClientDet
 	/**
 	 * 根据客户端信息
 	 *
-	 * @param sysOauthClientDetails
+	 * @param oauthClientDetails
 	 * @return
 	 */
-	Boolean updateClientDetailsById(SysOauthClientDetails sysOauthClientDetails);
+	Boolean updateClientDetailsById(OauthClientDetails oauthClientDetails);
 }

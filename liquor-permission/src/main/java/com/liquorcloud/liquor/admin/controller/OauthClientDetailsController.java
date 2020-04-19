@@ -2,7 +2,7 @@ package com.liquorcloud.liquor.admin.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.liquorcloud.liquor.common.model.entity.SysOauthClientDetails;
+import com.liquorcloud.liquor.common.model.entity.OauthClientDetails;
 import com.liquorcloud.liquor.admin.service.SysOauthClientDetailsService;
 import com.liquorcloud.liquor.common.core.util.R;
 import com.liquorcloud.liquor.common.log.annotation.SysLog;
@@ -37,25 +37,25 @@ public class OauthClientDetailsController {
 	 * 简单分页查询
 	 *
 	 * @param page                  分页对象
-	 * @param sysOauthClientDetails 系统终端
+	 * @param oauthClientDetails 系统终端
 	 * @return
 	 */
 	@GetMapping("/page")
-	public R getOauthClientDetailsPage(Page page, SysOauthClientDetails sysOauthClientDetails) {
-		return R.ok(sysOauthClientDetailsService.page(page, Wrappers.query(sysOauthClientDetails)));
+	public R getOauthClientDetailsPage(Page page, OauthClientDetails oauthClientDetails) {
+		return R.ok(sysOauthClientDetailsService.page(page, Wrappers.query(oauthClientDetails)));
 	}
 
 	/**
 	 * 添加
 	 *
-	 * @param sysOauthClientDetails 实体
+	 * @param oauthClientDetails 实体
 	 * @return success/false
 	 */
 	@SysLog("添加终端")
 	@PostMapping
 	@PreAuthorize("@pms.hasPermission('sys_client_add')")
-	public R add(@Valid @RequestBody SysOauthClientDetails sysOauthClientDetails) {
-		return R.ok(sysOauthClientDetailsService.save(sysOauthClientDetails));
+	public R add(@Valid @RequestBody OauthClientDetails oauthClientDetails) {
+		return R.ok(sysOauthClientDetailsService.save(oauthClientDetails));
 	}
 
 	/**
@@ -74,13 +74,13 @@ public class OauthClientDetailsController {
 	/**
 	 * 编辑
 	 *
-	 * @param sysOauthClientDetails 实体
+	 * @param oauthClientDetails 实体
 	 * @return success/false
 	 */
 	@SysLog("编辑终端")
 	@PutMapping
 	@PreAuthorize("@pms.hasPermission('sys_client_edit')")
-	public R update(@Valid @RequestBody SysOauthClientDetails sysOauthClientDetails) {
-		return R.ok(sysOauthClientDetailsService.updateClientDetailsById(sysOauthClientDetails));
+	public R update(@Valid @RequestBody OauthClientDetails oauthClientDetails) {
+		return R.ok(sysOauthClientDetailsService.updateClientDetailsById(oauthClientDetails));
 	}
 }
