@@ -125,7 +125,7 @@
         <module>liquor-common</module>
         <module>liquor-permission</module>
         <module>liquor-gateway</module>
-        <module>Liquor-auth-server</module>
+        <module>liquor-auth-server</module>
     </modules>
 
     <dependencyManagement>

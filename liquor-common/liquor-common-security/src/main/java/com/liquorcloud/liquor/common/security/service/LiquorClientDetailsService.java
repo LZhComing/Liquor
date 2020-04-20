@@ -2,6 +2,7 @@ package com.liquorcloud.liquor.common.security.service;
 
 import com.liquorcloud.liquor.common.core.constant.SecurityConstants;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
@@ -14,6 +15,7 @@ import javax.sql.DataSource;
  * @date 2019/10/23
  * see JdbcClientDetailsService
  */
+@Slf4j
 public class LiquorClientDetailsService extends JdbcClientDetailsService {
 
 	public LiquorClientDetailsService(DataSource dataSource) {
@@ -28,6 +30,9 @@ public class LiquorClientDetailsService extends JdbcClientDetailsService {
 	@SneakyThrows
 	@Cacheable(value = SecurityConstants.CLIENT_DETAILS_KEY, key = "#clientId", unless = "#result == null")
 	public ClientDetails loadClientByClientId(String clientId) {
-		return super.loadClientByClientId(clientId);
+		long start = System.currentTimeMillis();
+		ClientDetails clientDetails = super.loadClientByClientId(clientId);
+		log.info("从缓存获取客户端信息耗时：{}",System.currentTimeMillis()-start);
+		return clientDetails;
 	}
 }

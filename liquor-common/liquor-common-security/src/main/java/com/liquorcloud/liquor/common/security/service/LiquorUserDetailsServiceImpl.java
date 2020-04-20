@@ -43,8 +43,10 @@ public class LiquorUserDetailsServiceImpl implements UserDetailsService  {
 	@Override
 	@SneakyThrows
 	public UserDetails loadUserByUsername(String username) {
+		long start = System.currentTimeMillis();
 		Cache cache = cacheManager.getCache("user_details");
 		if (cache != null && cache.get(username) != null) {
+			log.info("从缓存获取用户信息耗时：{}",System.currentTimeMillis()-start);
 			return (LiquorUser) Objects.requireNonNull(cache.get(username)).get();
 		}
 
