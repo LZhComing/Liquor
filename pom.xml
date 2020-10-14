@@ -32,9 +32,9 @@
         <!--统一管理程序配置属性-->
         <mysql.host>139.9.119.146</mysql.host>
         <mysql.pwd>1qaz!QAZ</mysql.pwd>
-        <redis.host>117.51.147.193</redis.host>
+        <redis.host>139.9.119.146</redis.host>
         <redis.pwd>1qaz!QAZ</redis.pwd>
-        <eureka.defaultZoneClient>http://liquor:liquor@117.51.147.193:8761/eureka/</eureka.defaultZoneClient>
+        <eureka.defaultZoneClient>http://liquor:liquor@139.9.119.146:8761/eureka/</eureka.defaultZoneClient>
         <access.token.uri>http://liquor-auth-server/oauth/token</access.token.uri>
         <user.authorization.uri>http://liquor-auth-server/oauth/authorize</user.authorization.uri>
         <token.info.uri>http://liquor-auth-server/oauth/check_token</token.info.uri>
