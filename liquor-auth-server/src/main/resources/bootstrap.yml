@@ -8,7 +8,7 @@ spring:
     name: liquor-auth-server
   profiles:
     active: dev
-  # 注册中心配置
+# 注册中心配置
 eureka:
   instance:
     prefer-ip-address: true
@@ -21,4 +21,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

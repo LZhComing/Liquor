@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: admin
+  profiles:
+      active:
+        - secure
+  security:
+    user:
+      name: "liquor"
+      password: "1qaz!QAZ"
+
+  mail:
+    host: smtp.qq.com
+    username: 1064275075@qq.com
+    password: iszvliczzoclbfjf
+    default-encoding: utf-8
+    properties:
+      mail:
+        auth: true
+      starttls:
+        enable: true
+        required: true
+
+  boot:
+    admin:
+      notify:
+        mail:
+          template: classpath:/templates/status-changed.html
+          from: 1064275075@qq.com
+          to: 1064275075@qq.com
+          enabled: true
+          additional-properties:
+            project: ${project.name}}
+      monitor:
+        read-timeout: 20000
+        connect-timeout: 10000
+info:
+  app:
+    version: 3
+  version: 3
+server:
+  port: 8081
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    service-url:
+      defaultZone: ${eureka.defaultZoneClient}
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+

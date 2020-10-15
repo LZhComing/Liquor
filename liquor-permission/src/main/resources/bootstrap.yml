@@ -23,3 +23,12 @@ security:
       user-authorization-uri: ${user.authorization.uri}
     resource:
       token-info-uri: ${token.info.uri}
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
