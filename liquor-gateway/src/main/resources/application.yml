@@ -66,4 +66,4 @@ security:
 # 不校验验证码终端
 ignore:
   clients:
-    - test
+    - app

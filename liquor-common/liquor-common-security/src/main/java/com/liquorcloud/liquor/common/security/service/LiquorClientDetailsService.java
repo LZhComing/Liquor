@@ -24,7 +24,7 @@ public class LiquorClientDetailsService extends JdbcClientDetailsService {
 
 	/**
 	 * 重写原生方法支持redis缓存
-	 *	当返回结果不为空时，调用父类方法存储token
+	 * 当返回结果不为空时，调用父类方法存储token
 	 */
 	@Override
 	@SneakyThrows
